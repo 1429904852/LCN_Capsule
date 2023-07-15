@@ -1,14 +1,6 @@
 ### Label-correction Capsule Network for Hierarchical Text Classification
 
-### Dataset
-
-||WOS|DBPedia|
-|:-:|:-:|:-:|
-|Number of documents|       46,985       |     381,025 |
-|Mean document length|       200.7       |      106.9  |
-|Classes in level 1|       7       |      9      |
-|Classes in level 2|       143       |      70     |
-|Classes in level 3|   NA   |      219    |
+Code and data for "[Label-correction Capsule Network for Hierarchical Text Classification](https://ieeexplore.ieee.org/document/10149184?source=authoralert)" (TASLP 2023)
 
 ------
 
@@ -22,13 +14,13 @@
 ### Hypermeters
 
 - phase
-	- hierarchical_preprocess（数据预处理）
-	- train, test（当encoder为BiLSTM使用）
-	- bert, bert_test(当encoder为BERT对DBPedia数据集进行训练和测试)
+	- hierarchical_preprocess（data process）
+	- train, test（encoder=BiLSTM）
+	- bert, bert_test(encoder=BERT)
 - dataset
-- model_type(集成了很多模型)
+- model_type
 - batch_size
-- embedding_file_path（DB_embedding.txt或者WOS_embedding.txt）
+- embedding_file_path
 
 ------
 
@@ -83,9 +75,18 @@ python main.py --phase="bert_test" --config_path="src/bert_classifier/config/dbp
 
 ------
 
-### Reference
+If the code and data are used in your research, please cite the paper:
 
-- **[ICMLA-17]**: HDLTex: Hierarchical Deep Learning for Text Classification. [[paper]](https://arxiv.org/pdf/1709.08267.pdf) [[code]](https://github.com/kk7nc/HDLTex)
+```bash
+@ARTICLE{10149184,
+  author={Zhao, Fei and Wu, Zhen and He, Liang and Dai, Xin-Yu},
+  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+  title={Label-Correction Capsule Network for Hierarchical Text Classification}, 
+  year={2023},
+  volume={31},
+  number={},
+  pages={2158-2168},
+  doi={10.1109/TASLP.2023.3282099}}
+```
 
-- **[EMNLP-18]**: A Hierarchical Neural Attention-based Text Classifier. [[paper]](https://www.aclweb.org/anthology/D18-1094.pdf) [[code]](https://github.com/koustuvsinha/hier-class)
 
